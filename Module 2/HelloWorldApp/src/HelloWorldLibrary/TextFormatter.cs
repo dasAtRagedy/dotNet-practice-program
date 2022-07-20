@@ -4,14 +4,7 @@
     {
         public static string FormatText(string s)
         {
-            if (string.IsNullOrWhiteSpace(s))
-            {
-                return "";
-            }
-            else
-            {
-                return "Hello, " + s;
-            }
+            return string.IsNullOrWhiteSpace(s) ? string.Empty : System.DateTime.Now.ToString("yyyy-MM-dd") + " Hello, " + s;
         }
     }
 }
