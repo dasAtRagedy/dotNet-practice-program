@@ -52,6 +52,11 @@ namespace Task1
                 {
                     return i;
                 }
+
+                if (i == 0)
+                {
+                    products[0] = products[2];
+                }
             }
             return -1;
         }
