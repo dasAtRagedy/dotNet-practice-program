@@ -2,6 +2,7 @@
 
 public class OddEvenClass
 {
+    // TODO: Create a new method to check Odd/Even/Prime of a single supplied method (wtf)
     public void PrintNumbers()
     {
         for(int i = 1; i <= 100; i++)
