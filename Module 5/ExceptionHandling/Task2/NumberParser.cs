@@ -12,7 +12,7 @@ namespace Task2
             if (string.IsNullOrWhiteSpace(stringValue))
                 throw new FormatException();
             
-            stringValue = Regex.Replace(stringValue, @"\s+", "");
+            stringValue = Regex.Replace(stringValue, @"\s+", ""); // Removing all whitespaces
             
             int result = 0;
             int power = 1;
