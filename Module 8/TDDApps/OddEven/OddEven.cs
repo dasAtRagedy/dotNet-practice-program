@@ -7,6 +7,13 @@ public class OddEvenClass
         for(int i = 1; i <= 100; i++)
             Console.WriteLine(Parse(i));
     }
+    public void PrintNumbers(int n, int m)
+    {
+        for(int i = n; i <= m; i++)
+            Console.WriteLine(Parse(i));
+    }
+    
+    
     public static string Parse(int num)
     {
         if (IsPrime(num))
@@ -16,7 +23,7 @@ public class OddEvenClass
 
     public static bool IsPrime(int num)
     {
-        if (num == 1)
+        if(num <= 1)
             return false;
         for (int i = 2; i < num; i++)
             if (num % i == 0)

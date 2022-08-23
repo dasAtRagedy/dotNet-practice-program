@@ -3,32 +3,32 @@ namespace OddEven;
 public class OddEvenTests
 {
     [Theory]
-    [InlineData(1, "Odd")]
-    [InlineData(2, "2")]
-    [InlineData(13, "13")]
-    [InlineData(24, "Even")]
-    [InlineData(35, "Odd")]
-    [InlineData(46, "Even")]
-    [InlineData(57, "Odd")]
-    [InlineData(68, "Even")]
-    [InlineData(79, "79")]
-    [InlineData(90, "Even")]
+    [InlineData(-921834618, "Even")]
+    [InlineData(-570258245, "Odd")]
+    [InlineData(-38440691, "Odd")]
+    [InlineData(-76781, "Odd")]
+    [InlineData(76781, "76781")]
+    [InlineData(24329, "24329")]
+    [InlineData(38440691, "38440691")]
+    [InlineData(519702546, "Even")]
+    [InlineData(845176713, "Odd")]
+    [InlineData(970082554, "Even")]
     public void ParseNumberTest(int number, string expectedResult)
     {
         Assert.Equal(expectedResult, OddEvenClass.Parse(number));
     }
     
     [Theory]
-    [InlineData(1, false)]
-    [InlineData(2, true)]
-    [InlineData(13, true)]
-    [InlineData(24, false)]
-    [InlineData(35, false)]
-    [InlineData(46, false)]
-    [InlineData(57, false)]
-    [InlineData(68, false)]
-    [InlineData(79, true)]
-    [InlineData(90, false)]
+    [InlineData(-921834618, false)]
+    [InlineData(-570258245, false)]
+    [InlineData(-38440691, false)]
+    [InlineData(-76781, false)]
+    [InlineData(76781, true)]
+    [InlineData(24329, true)]
+    [InlineData(38440691, true)]
+    [InlineData(519702546, false)]
+    [InlineData(845176713, false)]
+    [InlineData(970082554, false)]
     public void IsPrimeTest(int number, bool expectedResult)
     {
         Assert.Equal(expectedResult, OddEvenClass.IsPrime(number));
