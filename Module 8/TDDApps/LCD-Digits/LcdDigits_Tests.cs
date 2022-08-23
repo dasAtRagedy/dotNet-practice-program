@@ -11,4 +11,13 @@ public class LcdDigits_Tests
         var lcdDigits = new LcdDigits();
         Assert.Equal(result, lcdDigits.GetDigit(num));
     }
+    
+    [Theory]
+    [InlineData("910", "._. ... ._.\r\n|_| ..| |.|\r\n..| ..| |_|")]
+    [InlineData("0123456789", "._. ... ._. ._. ... ._. ._. ._. ._. ._.\r\n|.| ..| ._| ._| |_| |_. |_. ..| |_| |_|\r\n|_| ..| |_. ._| ..| ._| |_| ..| |_| ..|")]
+    public void PrintDigitsTest(string num, string result)
+    {
+        var lcdDigits = new LcdDigits();
+        Assert.Equal(result, lcdDigits.GetDigits(num));
+    }
 }
