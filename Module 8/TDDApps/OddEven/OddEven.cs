@@ -11,6 +11,6 @@ public class OddEvenClass
     {
         if (num % 2 == 0)
             return "Even";
-        return num.ToString();
+        return "Odd";
     }
 }
