@@ -7,8 +7,10 @@ public class OddEvenClass
         for(int i = 1; i <= 100; i++)
             Console.WriteLine(Parse(i));
     }
-    public static int Parse(int num)
+    public static string Parse(int num)
     {
-        return num;
+        if (num % 2 == 0)
+            return "Even";
+        return num.ToString();
     }
 }
