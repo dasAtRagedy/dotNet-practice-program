@@ -62,7 +62,18 @@ public class BankOcr
                 }
             }
         }
-
+        
         return result;
+    }
+    
+    public static bool IsSumValid(string input)
+    {
+        int result = 0;
+        for (int i = 0; i < 9; i++)
+        {
+            result += (input[i] - '0') * (9 - i);
+        }
+
+        return result % 11 == 0;
     }
 }
