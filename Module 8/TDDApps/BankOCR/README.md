@@ -97,7 +97,7 @@ whitespace necessary. Just don't save any changes by mistake.
 
 use case 1
 ```
- _  _  _  _  _  _  _  _  _
+ _  _  _  _  _  _  _  _  _ 
 | || || || || || || || || |
 |_||_||_||_||_||_||_||_||_|
 ```
