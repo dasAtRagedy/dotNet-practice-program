@@ -44,6 +44,23 @@ public class BankOcrTests
     }
     
     [Theory]
+    [InlineData(" _  _  _  _  _  _  _  _    "+
+                "| || || || || || || ||_   |"+
+                "|_||_||_||_||_||_||_| _|  |", "000000051")]
+    [InlineData("    _  _  _  _  _  _     _ "+
+                "|_||_|| || ||_   |  |  | _ "+
+                "  | _||_||_||_|  |  |  | _|", "49006771? ILL")]
+    [InlineData("    _  _     _  _  _  _  _ "+
+                "  | _| _||_| _ |_   ||_||_|"+
+                "  ||_  _|  | _||_|  ||_| _ ", "1234?678? ILL")]
+    public void ParseWithCodeTest(string input, string expected)
+    {
+        var bankOcr = new BankOcr();
+        var result = bankOcr.ParseWithCode(input);
+        Assert.Equal(expected, result);
+    }
+    
+    [Theory]
     [InlineData("000000000", true)]
     [InlineData("000000001", false)]
     [InlineData("999999999", false)]

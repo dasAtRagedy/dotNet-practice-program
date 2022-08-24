@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace BankOCR;
+﻿namespace BankOCR;
 
 public class BankOcr
 {
@@ -67,7 +65,18 @@ public class BankOcr
             if (!found) 
                 result += '?';
         }
+
+        return result;
+    }
+
+    public string ParseWithCode(string input)
+    {
+        string result = Parse(input);
         
+        if (result.IndexOf('?') != -1)
+            return result + " ILL";
+        if(!IsSumValid(result))
+            return result + " ERR";
         return result;
     }
     
