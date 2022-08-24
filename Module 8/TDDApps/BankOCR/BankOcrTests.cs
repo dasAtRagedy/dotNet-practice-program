@@ -33,6 +33,9 @@ public class BankOcrTests
     [InlineData(" _  _  _  _  _  _  _  _  _ "+
                 "|_||_||_||_||_||_||_||_||_|"+
                 " _| _| _| _| _| _| _| _| _|", "999999999")]
+    [InlineData("|_ |_ |_ |_ |_ |_ |_ |   _ "+
+                "|_||_||_||_||_||_||_||_||_|"+
+                " _| _| _| _| _| _| _| _| _|", "????????9")]
     public void ParseTest(string input, string expected)
     {
         var bankOcr = new BankOcr();

@@ -1,4 +1,6 @@
-﻿namespace BankOCR;
+﻿using System;
+
+namespace BankOCR;
 
 public class BankOcr
 {
@@ -48,19 +50,22 @@ public class BankOcr
     public string Parse(string input)
     {
         string result = "";
+        bool found;
         for (int i = 0; i < 9; i++)
         {
+            found = false;
             for(int j = 0; j < _digits.Length; j++)
             {
-                var currentDigit = input.Substring(i*3, 3) + 
-                                    input.Substring(27+i*3, 3) +
-                                    input.Substring(27*2+i*3, 3);
-                if (currentDigit == _digits[j])
-                {
-                    result += j.ToString();
-                    break;
-                }
+                var currentDigit = string.Concat(input.AsSpan(i*3, 3), 
+                                                      input.AsSpan(27+i*3, 3), 
+                                                      input.AsSpan(27*2+i*3, 3));
+                if (currentDigit != _digits[j]) continue;
+                result += j.ToString();
+                found = true;
+                break;
             }
+            if (!found) 
+                result += '?';
         }
         
         return result;
